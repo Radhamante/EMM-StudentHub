@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retard et absence</title>
+    <link rel="stylesheet" href="CSS/absenceLate.css">
+</head>
+<body>
+    <header>
+        <a href="Calendar.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+        <div class="headerButtonCtnr">
+            <button onclick="setLate()">Signaler un retard</button>
+            <button onclick="setAbsence()">Signaler une absence</button>
+        </div>
+    </header>
+    <main>
+        <div id="popupLate" class="popup">
+            <button class="close" onclick="popupLate.style.display = 'none'"><i class="far fa-times-circle"></i></button>
+            <h3>Signaler un retard</h3>
+            <label>
+                Prenom
+                <input type="text" id="latePrenom">
+            </label>
+            <label>
+                Nom
+                <input type="text" id="lateNom">
+            </label>
+            <button class="valide" onclick="ProfAndAdminLate()">Valider</button>
+        </div>
+
+        <div id="popupAbsence" class="popup">
+            <button class="close" onclick="popupAbsence.style.display = 'none'"><i class="far fa-times-circle"></i></button>
+            <h3>Signaler une absence</h3>
+            <label>
+                Prenom
+                <input type="text" id="absencePrenom">
+            </label>
+            <label>
+                Nom
+                <input type="text" id="absenceNom">
+            </label>
+            <button class="valide" onclick="ProfAndAdminAbsence()">Valider</button>
+        </div>
+
+        <div class="info">
+            <h1></h1> <!-- titre du cours -->
+            <h3></h3> <!-- professeur -->
+            <p></p> <!-- horraires -->
+            <img src="assets/logos/undraw_teaching_f1cm.svg" alt="">
+        </div>
+        <div class="lateCtnr">
+            <div class="late">
+                <h3>Retard signalés par l'administration</h3>
+                <ul id="lateAdmin">
+                    
+                </ul>
+            </div>
+            <div class="late">
+                <h3>Retard signalés par le professeur</h3>
+                <ul id="lateProf">
+
+                </ul>
+            </div>
+            <div class="late">
+                <h3>Retard signalés par l'eleve</h3>
+                <ul id="lateStudent">
+
+                </ul>
+            </div>
+            <div class="late">
+                <h3>Absence</h3>
+                <ul id="absence">
+
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="JS/absenceLate.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="CSS/signup.css"">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <img class="wave" src="assets/logos/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="assets/logos/undraw_welcoming_xvuq.svg"">
+        </div>
+        <div class="login-content">
+            <form action="index.html" id="formulaire">
+                <div id="reset_all">
+                    <img src="assets/logos/avatar.svg">
+                    <h2 class="title">Bienvenue</h2>
+                    <div class="input-div one">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Email</h5>
+                            <input type="text" class="input" id="username">
+                        </div>
+                    </div>
+                    <div class="input-div pass">
+                        <div class="i"> 
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Mot de passe</h5>
+                            <input type="password" class="input" id="pass1">
+                        </div>
+                    </div>
+                    <div class="input-div pass">
+                        <div class="i"> 
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Confirmer le mot de passe</h5>
+                            <input type="password" class="input" id="pass2">
+                        </div>
+                    </div>
+                </div>
+                <div class="radio-div">
+                    <label>
+                        Etudiant
+                        <input type="radio" name="role" id="choix" value=3 checked>
+                        <span></span>
+                    </label>
+                    <label>
+                        Professeur
+                        <input type="radio" name="role" id="choix" value=2>
+                        <span></span>
+                    </label>
+                    <label>
+                        Admin
+                        <input type="radio" name="role" id="choix" value=1>
+                        <span></span>
+                    </label>
+                </div>
+                <a href="login.html">Deja inscrit ?</a>
+                <input type="button" class="btn" value="Créer le compte" id="sign_up">
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+    <script src="JS/firebase_Signup.js"></script>
+    <script src="JS/signup.js"></script>
+</body>
+</html>

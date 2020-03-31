@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/addEvent.css">
+</head>
+<body>
+    <header>
+        <a href="adminHub.html" id="return"><i class="far fa-arrow-alt-circle-left"></i></a>
+        <a href="Calendar.html"><i class="far fa-calendar-alt"></i></a>
+    </header>
+    <main>
+
+        <div class="form">
+            <label>
+                Classe
+                <select id="classe">
+    
+                </select>
+            </label>
+            <label>
+                Titre du cours
+                <input type="text" id="titre">
+            </label>
+            <label>
+                Professeur
+                <input type="text" id="prof">
+            </label>
+            <label>
+                Jour
+                <input type="date" id="jour">
+            </label>
+            <label>
+                Début du cours
+                <input type="time" id="debut">
+            </label>
+            <label>
+                Fin du cours
+                <input type="time" id="fin">
+            </label>
+            <label>
+                Couleur 
+                <span class="selectColor"></span>
+                <input type="color" id="color" value="#2fd69a" onchange="changeColor()">
+            </label>
+            <p class="colorP">Eviter les couleurs claires</p>
+            <button onclick="valider()"> valider
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="image">
+            <img src="assets/logos/undraw_add_content_d1tf.svg" alt="">
+        </div>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="JS/addEvent.js"></script>
+</body>
+</html>

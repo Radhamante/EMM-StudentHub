@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="CSS/addUser.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header>
+        <h1>Student hub</h1>
+        <a href="adminHub.html" id="return"><i class="far fa-arrow-alt-circle-left"></i></a>
+        <div>
+            <button id="supp">Supprimer mon compte</button>
+            <button id="deco">Decconexion</button>
+            <h3>pseudo</h3>
+            <a href=""><img src="assets/logos/avatar.svg" alt=""></a>
+        </div>
+    </header>
+    <img class="wave" src="assets/logos/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="assets/logos/undraw_welcoming_xvuq.svg"">
+        </div>
+        <div class="login-content">
+            <form action="index.html" id="formulaire">
+                <div id="reset_all">
+                    <img src="assets/logos/avatar.svg">
+                    <h2 class="title">Créer un compte</h2>
+                    <div class="input-div one">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Email</h5>
+                            <input type="text" class="input" id="username">
+                        </div>
+                    </div>
+                    <div class="input-div one" id="name_of_user">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Prénom</h5>
+                            <input type="text" class="input" id="name">
+                        </div>
+                    </div>
+                    <div class="input-div one" id="lastname_of_user">
+                        <div class="i">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Nom</h5>
+                            <input type="text" class="input" id="lastname">
+                        </div>
+                    </div>
+                    <div class="input-div pass">
+                        <div class="i"> 
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Mot de passe</h5>
+                            <input type="password" class="input" id="pass1">
+                        </div>
+                    </div>
+                    <div class="input-div pass">
+                        <div class="i"> 
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="div">
+                            <h5>Confirmer le mot de passe</h5>
+                            <input type="password" class="input" id="pass2">
+                        </div>
+                    </div>
+                    <div id="select_choice_class">
+                        <label for="class_choice">Choisir une classe:</label>
+                        <select name="" id="class_choice" class="indut-div pass">
+                            <option value="">--Merci de choisir une classe--</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="radio-div">
+                    <label>
+                        Etudiant
+                        <input type="radio" name="role" id="choix" value=3 checked>
+                        <span></span>
+                    </label>
+                    <label>
+                        Professeur
+                        <input type="radio" name="role" id="choix" value=2>
+                        <span></span>
+                    </label>
+                    <label>
+                        Admin
+                        <input type="radio" name="role" id="choix" value=1>
+                        <span></span>
+                    </label>
+                </div>
+                <input type="button" class="btn" value="Créer le compte" id="sign_up">
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase.js"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="JS/firebase_addUser.js"></script>
+    <script src="JS/addUser.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right,#2fd69a, #24ac7e);
+    z-index: 1;
+}
+header div{
+    height: 80%;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    color: white
+}
+header a{
+    height: 100%
+}
+header img{
+    height: 100%;
+    margin-left: 20px
+}
+header h1{
+    margin: 0;
+    margin-left: 30px;
+    color: white
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* align-items: center;
+    justify-content: space-around; */
+    margin-top: 80px;
+    height: calc(100% - 80px);
+}
+
+#mnt_cntr{
+    width: 300px;
+    height: 600px;
+    background-color: #2E86AB;
+    border-radius: 30px;
+}
+
+#photo_profil{
+    width: 250px;
+    height: 250px;
+    margin-top: 20px ;
+    border-radius: 1000px;
+}
+#photo_prof{
+    margin-left: 20px;
+    width: 250px;
+    height: 250px;
+}
+
+#list_profil{
+    width: 600px;
+    height: 600px;
+    margin-left: 10px;
+    background-color: #A5B5BF;
+    border-radius: 30px;
+}
+
+#nm_prnm{
+    display: flex;
+    margin-top: 80px;
+    margin-left: 50px;
+    border-radius: 30px ;
+    width: 80%;
+    height: 100px;
+}
+#nom{
+    margin-left: 40px;
+}
+#nom_input{
+    margin-left: -90px;
+    border-radius: 15px;
+}
+#prenom{
+    margin-left: 180px;
+}
+#prenom_input{
+    margin-left: -120px;
+    border-radius: 30px;
+}
+.name{
+    width: 300px;
+    height: 30px;
+    margin-top: 60px;
+    margin-left: -80px;
+}
+#personnel{
+    display: flex;
+    margin-top: 80px;
+    margin-left: 50px;
+    border-radius: 30px ;
+    width: 80%;
+    height: 100px;
+}
+
+#email{
+    margin-left: 40px;
+}
+#email_input{
+    margin-left: -90px;
+    border-radius: 15px;
+    height: 30px;
+}
+
+#tel{
+    margin-left: 180px;
+}
+#tel_input{
+    margin-left: -140px;
+    border-radius: 30px;
+}
+.btn{
+    margin-left: 200px;
+    display: block;
+    width: 50%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: .5s;
+}
+.btn:hover{
+    background-position: right;
+}

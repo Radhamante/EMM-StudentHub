@@ -1,0 +1,28 @@
+etudiant:
+- regarder l'emploi du temps
+- chat
+- signaler un retard
+- signaler une abscence
+
+prof:
+
+- regarder l'emploi du temps
+- chat
+- voir les retard et abscence
+- signaler un retard / abscence
+
+admin:
+
+- regarder l'emploi du temps
+- ajouter des cours a l'emploie du temps
+- voir les retard et abscence
+- signaler un retard / abscence
+- ajouter une classe
+- ajouter un eleve
+
+
+idees:
+- voir le nombre de retard et abscence sur son profile
+- pouvoir link un cours dans le chat ( comme ca les autre peuvent directement cliquer sur le cours et voir les information )
+- pouvoir stocker des documents 
+- pouvoir envoyé des msg individuel 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Animated Login Form</title>
+    <link rel="stylesheet" type="text/css" href="CSS/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <img class="wave" src="assets/logos/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="assets/logos/undraw_welcoming_xvuq.svg"">
+        </div>
+        <div class="login-content">
+            <form action="index.html">
+                <img src="assets/logos/avatar.svg">
+                <h2 class="title">Bonjour</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Email</h5>
+                        <input type="text" class="input" id="username">
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i"> 
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Mot de passe</h5>
+                        <input type="password" class="input" id="pass">
+                    </div>
+                </div>
+                <input type="button" class="btn" value="Allons-y !" id="sign_up">
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
+    <script src="JS/firebase_login.js"></script>
+    <script src="JS/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    background: linear-gradient(to right,#2fd69a, #24ac7e);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between
+}
+header a{
+    display: flex;
+    height: 100%;
+    width: max-content;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 40px
+}
+header i{
+    display: flex;
+    font-size: 30px;
+    color: white
+}
+
+.headerButtonCtnr{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 40px
+}
+
+.headerButtonCtnr button{
+    background: none;
+    height: 40px;
+    border: 3px solid #555;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px ;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s
+}
+.headerButtonCtnr button:hover{
+    border: 3px solid tomato;
+}
+
+main{
+    margin-top: 70px;
+    padding: 30px;
+    display: flex
+}
+
+.info{
+    width: 50%;
+}
+.info img{
+    margin-top: 50px;
+    width: 80%;
+}
+
+.lateCtnr{
+    width: 50%
+}
+
+.popup{
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    left: calc(50% - 150px);
+    border: #2fd69a 2px solid;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px darkgrey;
+    flex-direction: column;
+    padding: 40px 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+.popup h3{
+    font-size: 25px;
+}
+
+.popup label{
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup label input{
+    margin-top: 4px
+}
+
+.close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    color: lightgray;
+    border: none;
+    padding: none;
+    margin: none;
+    font-size: 22px;
+    transition: 0.2s
+}
+.close:hover{
+    color: darkgray
+}
+
+.valide{
+    width: 180px;
+    height: 40px;
+    margin: auto;
+    background-color: #2fd69a;
+    border: 2px solid #24ac7e;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder
+}
+
