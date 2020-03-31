@@ -5,36 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Hub</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <link rel="stylesheet" href="CSS/profil.css">
 </head>
 <body>
     <header>
-        <h1>Student hub</h1>
+        <a href="adminHub.html"><i class="far fa-arrow-alt-circle-left"></i></a>
         <div>
             <button id="supp">Supprimer mon compte</button>
-            <button id="deco">Decconexion</button>
+            
             <h3>pseudo</h3>
             <a href=""><img src="assets/logos/avatar.svg" alt=""></a>
         </div>
     </header>
     <main>
-        <div id="mnt_cntr">
-            <div id="photo_profil"><img src="assets/logos/avatar.svg" alt="" id="photo_prof"></div>
-        </div>
         <div id="list_profil">
-            <div id="nm_prnm">
-              <h2 id="nom">Nom</h2>
-              <input type="text" class="name" id="nom_input" >
-              <h2 id="prenom">Prénom</h2>
-              <input type="text" class="name" id="prenom_input">
-            </div>
-            <div id="personnel">
-              <h2 id="email">Email</h2>
-              <input type="text" class="name" id="email_input" >
-              <h2 id="tel">Téléphone</h2>
-              <input type="text" class="name" id="tel_input" >
-            </div>
-            <input type="button" class="btn" value="Allons-y !" id="envoye">
+            <h3>Nom</h3>
+            <p id="nom"></p>
+            <h3>Prénom</h3>
+            <p id="prenom"></p>
+            <h3>Email</h3>
+            <p id="email"></p>
+            <h3>Télephone</h3>
+            <p id="tel"></p>
+            <button id="deco" class="button">Deconnexion</button>
+        </div>
+        <div id="mnt_cntr">
+            <img src="assets/logos/avatar.svg" alt="" id="photo_prof">
+            <button class="button">Changer de photo</button>
         </div>
             
     </main>
@@ -48,7 +46,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
     <script src="JS/firebase_profil.js"></script>
-    <script src="JS/profil.js"></script>
+    <!-- <script src="JS/profil.js"></script> -->
     
 </body>
 </html>

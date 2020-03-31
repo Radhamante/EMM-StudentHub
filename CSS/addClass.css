@@ -28,7 +28,17 @@ header div{
     color: white
 }
 header a{
-    height: 100%
+    display: flex;
+    height: 100%;
+    width: max-content;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 40px
+}
+header i{
+    display: flex;
+    font-size: 30px;
+    color: white
 }
 header img{
     height: 100%;
@@ -43,11 +53,13 @@ header h1{
 main{
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
-    /* align-items: center;
-    justify-content: space-around; */
     margin-top: 80px;
     height: calc(100% - 80px);
+    justify-content: space-around;
+    align-items: center;
+}
+main > img{
+    width: 40%
 }
 
 #mnt_cntr{
@@ -82,33 +94,13 @@ main{
     height: 100%;
     width: 50%;
 }
-body{
-	margin:0;
-	color:black;
-	background:#c8c8c8;
-	font:600 16px/18px 'Open Sans',sans-serif;
-}
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
 a{color:inherit;text-decoration:none}
 
-.login-wrap{
-	width:100%;
-    margin-top:60px;
-    margin-left: 250px;
-	max-width:525px;
-	min-height:500px;
-	position:relative;
-	background:url(../assets/undraw_confirm_89ui.png) no-repeat center;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-}
 .login-html{
-	width:100%;
-	height:100%;
-	position:absolute;
-	padding:90px 70px 50px 70px;
-	background:rgba(255, 255, 255, 0.74);
+    height: max-content;
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -145,8 +137,8 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
-	color:#1161ee;
-	border-color:#2ED096;
+	color: #2fd69a;
+	border-color:#24ac7e;
 }
 .login-form{
 	min-height:345px;
@@ -162,7 +154,16 @@ a{color:inherit;text-decoration:none}
 .login-form .group .button{
 	width:100%;
 	color: black;
-	display:block;
+    display:block;
+}
+
+#nouvelle_classe_name,#hello{
+    border-bottom: 2px solid #2fd69a;
+    border-radius: 0;
+    height: 40px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 17px
 }
 .login-form .group .input,
 .login-form .group .button{
@@ -177,7 +178,7 @@ a{color:inherit;text-decoration:none}
 	font-size:12px;
 }
 .login-form .group .button{
-	background:#1161ee;
+	background: #2fd69a;
 }
 .login-form .group label .icon{
 	width:15px;
@@ -211,7 +212,7 @@ a{color:inherit;text-decoration:none}
 	color:#fff;
 }
 .login-form .group .check:checked + label .icon{
-	background:#1161ee;
+	background: #2fd69a;
 }
 .login-form .group .check:checked + label .icon:before{
 	transform:scale(1) rotate(45deg);

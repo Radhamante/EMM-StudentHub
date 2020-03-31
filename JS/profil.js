@@ -1,3 +1,9 @@
+const deconnexion = document.getElementById('deco')
+deconnexion.addEventListener('click', e =>{
+    firebase.auth().signOut();
+    document.location.pathname='index.html'
+})
+
 $(document).ready(function() {
     $('#contact_form').bootstrapValidator({
         // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later

@@ -30,13 +30,6 @@ supprimer_le_compte.addEventListener('click', e =>{
 
 
 
-const deconnexion = document.getElementById('deco')
-
-deconnexion.addEventListener('click', e =>{
-    firebase.auth().signOut();
-    document.location.pathname='index.html'
-})
-
 firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){
       console.log(firebaseUser)
@@ -47,4 +40,4 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
       console.log('not logged in')
       deconnexion.classList.add('hide')
     }
-  })
+})

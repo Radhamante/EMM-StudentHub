@@ -16,10 +16,8 @@ firebase.initializeApp(firebaseConfig);
 //supprimer un compte 
 const supprimer_le_compte = document.getElementById('supp')
 
+
 supprimer_le_compte.addEventListener('click', e =>{
-
-  var user = firebase.auth().currentUser;
-
   // fonction delete
   user.delete().then(function(){
       document.location.pathname='index.html'
@@ -38,8 +36,6 @@ deconnexion.addEventListener('click', e =>{
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){
-      console.log(firebaseUser)
-      console.log("PLUS CO")
       deconnexion.classList.remove('hide')
 
     }else{
@@ -48,24 +44,25 @@ firebase.auth().onAuthStateChanged(firebaseUser =>{
     }
   })
 
-  //profil change
-
-const envoye = document.getElementById('envoye')
-const nom_input = document.getElementById('nom_input')
-const prenom_input = document.getElementById('prenom_input')
-const email_input = document.getElementById('email_input')
-const tel_input = document.getElementById('tel_input')
+//profil change
 
 
-envoye.addEventListener('click', e =>{  
-  const nom = nom_input.value; 
-  const prenom = prenom_input.value;
-  const tel = tel_input.value;
-  var user = firebase.auth().currentUser;
-  console.log(nom+" "+prenom+" "+tel)
-  return firebase.firestore().collection('Personnes_connectés').doc(user.uid).set({
-    Nom: nom,
-    Prenom: prenom,
-    Telephone: tel
-  },{ merge: true })
-}) 
+
+const nom = document.getElementById('nom')
+const prenom = document.getElementById('prenom')
+const email = document.getElementById('email')
+const tel = document.getElementById('tel')
+
+
+const fb = firebase.firestore();
+
+window.onload = () => {
+    setTimeout(() => {
+        fb.collection('Personnes_connectés').doc(firebase.auth().currentUser.uid).get().then(doc => {
+            nom.innerHTML = doc.data().Nom
+            prenom.innerHTML = doc.data().Prenom
+            email.innerHTML = doc.data().Email
+            telephone.innerHTML = doc.data().Telephone
+        })
+    },700)
+}
