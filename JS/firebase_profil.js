@@ -66,3 +66,34 @@ window.onload = () => {
         })
     },700)
 }
+
+var uploader = document.getElementById('uploader');
+var fileButton = document.getElementById('fileButton');
+
+//Listen for file selection
+
+fileButton.addEventListener('change', function(e){
+    //get file
+    var file = e.target.files[0]
+
+    //create storage ref
+    var storageRef = firebase.storage().ref("toaster/" + file.name)
+
+    //upload file
+     var task = storageRef.put(file);
+    console.log("hello")
+    //update progress bar
+    task.on('state_changed',
+        function progress (snapshot){
+            var percentage = (snapshot.bytesTransferred / snapshot.totalBytes)*100;
+            uploader.value = percentage;
+        },
+        function error(err){
+
+        },
+        function complete (){
+
+        }
+    );
+
+});
