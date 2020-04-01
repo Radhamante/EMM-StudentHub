@@ -16,8 +16,8 @@ firebase.initializeApp(firebaseConfig);
 //supprimer un compte 
 const supprimer_le_compte = document.getElementById('supp')
 
-
 supprimer_le_compte.addEventListener('click', e =>{
+    const user = firebase.auth().currentUser
   // fonction delete
   user.delete().then(function(){
       document.location.pathname='index.html'
