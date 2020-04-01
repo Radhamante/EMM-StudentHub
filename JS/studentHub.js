@@ -13,29 +13,7 @@ var firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-//supprimer un compte 
-const supprimer_le_compte = document.getElementById('supp')
 
-supprimer_le_compte.addEventListener('click', e =>{
-
-  var user = firebase.auth().currentUser;
-
-  // fonction delete
-  firebase.firestore().collection('Personnes_connectés').doc(user.uid).delete();
-  user.delete().then(function(){
-      document.location.pathname='index.html'
-  }).catch(function(error){
-    console.log("erreur de suppression")
-  })
-})
-
-//deconnexion
-const deconnexion = document.getElementById('deco')
-
-deconnexion.addEventListener('click', e =>{
-    firebase.auth().signOut();
-    document.location.pathname='index.html'
-})
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){

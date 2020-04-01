@@ -59,6 +59,7 @@ creatCalendar = (classe) =>{
         calendarPicker = classe
     }
     document.getElementById("BaseBackground").style.display = "none"
+    calendarEl.style.display = "block"
     let calendar
     fb.collection(calendarPicker).onSnapshot(function(querySnapshot) {
         calendarEl.innerHTML = ""
