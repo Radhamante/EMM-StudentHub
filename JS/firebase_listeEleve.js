@@ -125,14 +125,17 @@ let exo = ""
 firebase.firestore().collection('name_class').get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
       exo+= `<button value="${doc.data().name}" class="hhey" id="${doc.data().name}">${doc.data().name}</button>`
-      var noem = document.getElementById(doc.data().name)
     })
     $('#filter_class').append(exo)
     let tbl = document.getElementsByClassName('hhey');
     for(let j=0; j<tbl.length; j++){
         console.log(tbl[j].value)
         $('#filter_class').on('click','button', e =>{
-        $( "#principal_list" ).load(window.location.href + " #principal_list" )
+        $("#lastname_usersID").html("")
+        $("#class_usersID").html("")
+        $("#email_usersID").html("")
+        $("#tel_usersID").html("")
+        $("#name_usersID").html("")
         if (e.target && e.target.id == tbl[j].value){
             console.log("oui")
             let e_classe = "";
