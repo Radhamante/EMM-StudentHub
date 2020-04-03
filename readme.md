@@ -10,27 +10,27 @@
 
 ### étudiant:
 - regarder l'emploi du temps
-- signaler un retard *emploie du temps -> clique sur le cours*
-- signaler une abscence *emploie du temps -> clique sur le cours*
-- profil *photo non changeable pour l'instant*
+- signaler un retard | *emploie du temps -> clique sur le cours*
+- signaler une abscence | *emploie du temps -> clique sur le cours*
+- profil | *photo non changeable pour l'instant*
 
 
 ### prof:
 
-- regarder l'emploi du temps *choix de la classe dans le header*
-- voir les retard et abscence *emploie du temps -> clique sur le cours*
-- signaler un retard / abscence *emploie du temps -> clique sur le cours*
-- profil *photo non changeable pour l'instant*
+- regarder l'emploi du temps | *choix de la classe dans le header*
+- voir les retard et abscence | *emploie du temps -> clique sur le cours*
+- signaler un retard / abscence | *emploie du temps -> clique sur le cours*
+- profil | *photo non changeable pour l'instant*
  
 ### admin:
 
-- regarder l'emploi du temps *choix de la classe dans le header*
-- ajouter des cours a l'emploie du temps *emploie du temps -> + dans le header*
-- voir les retard et abscence *emploie du temps -> clique sur le cours*
-- signaler un retard / abscence *emploie du temps -> clique sur le cours*
+- regarder l'emploi du temps | *choix de la classe dans le header*
+- ajouter des cours a l'emploie du temps | *emploie du temps -> + dans le header*
+- voir les retard et abscence | *emploie du temps -> clique sur le cours*
+- signaler un retard / abscence | *emploie du temps -> clique sur le cours*
 - ajouter/suprimer une classe
 - ajouter un utilisateur
-- profil *photo non changeable pour l'instant*
+- profil | *photo non changeable pour l'instant*
 
 
 
