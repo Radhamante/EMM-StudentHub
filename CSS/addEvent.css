@@ -6,30 +6,6 @@ body{
     overflow: hidden;
 }
 
-header{
-    position: fixed;
-    top: 0;
-    height: 70px;
-    width: 100%;
-    background: linear-gradient(to right,#2fd69a, #24ac7e);
-    z-index: 1;
-    display: flex;
-    justify-content: space-between
-}
-header a{
-    display: flex;
-    height: 100%;
-    width: max-content;
-    align-items: center;
-    text-decoration: none;
-    margin: 0 40px
-}
-header i{
-    display: flex;
-    font-size: 35px;
-    color: white
-}
-
 main{
     margin-top: 70px;
     display: flex;

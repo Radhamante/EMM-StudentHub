@@ -9,46 +9,7 @@ body{
     flex-direction: column;
 }
 
-header{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to right,#2fd69a, #24ac7e);
-    z-index: 1;
-}
-header div{
-    height: 80%;
-    margin-right: 30px;
-    display: flex;
-    align-items: center;
-    color: white
-}
-header a{
-    display: flex;
-    height: 100%;
-    width: max-content;
-    align-items: center;
-    text-decoration: none;
-    margin: 0 40px
-}
-header i{
-    display: flex;
-    font-size: 30px;
-    color: white
-}
-header img{
-    height: 100%;
-    margin-left: 20px
-}
-header h1{
-    margin: 0;
-    margin-left: 30px;
-    color: white
-}
+
 
 main{
     display: flex;
@@ -77,11 +38,13 @@ main{
     border-radius: 1000px;
 }
 #photo_prof{
-    width: 300px
+    width: 300px;
+    height: 300px;
 }
 
 .button{
-    margin-top: 60px;
+    margin: 0;
+    margin-top: 40px;
     width: 200px;
     height: 40px;
     font-size: 20px;
@@ -91,13 +54,18 @@ main{
     color: #555;
     border-radius: 20px;
     cursor: pointer;
-    transition: 0.2s
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 'poppins'
 }
 .button:hover{
     background-color: #2fd69a;
     border: 2px solid #24ac7e;
     color: white
 }
+
 
 #list_profil{
     width: 300px;
@@ -116,4 +84,16 @@ main{
     appearance: none;
     width: 50%;
     margin-bottom: 10px;
+}
+#fileButton{
+    display: none
+}
+
+#supp{
+    border: tomato 2px solid;
+    font-size: 14px
+}
+#supp:hover{
+    background-color: tomato;
+    border: 2px solid brown
 }
