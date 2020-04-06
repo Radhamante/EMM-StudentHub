@@ -40,11 +40,11 @@ setTimeout(() => {
             document.getElementById("return").href = "profHub.html"
         }
     })
-},900)
+},1000)
 
 addMessage = (classe) => {
     if (classe == undefined) {
-        classePicker = document.getElementById("classePicker").value
+        classePicker = currentClasse
     }else{
         classePicker = classe
     }
@@ -66,8 +66,11 @@ creatChat = (classe) => {
     }
     fd.ref(classePicker).on('child_added', function(snapshot) {
         snapshot = snapshot.toJSON()
+        console.log(snapshot.pseudo,pseudo)
         if(snapshot.pseudo == pseudo){
             style = "me"
+        }else{
+            style = ""
         }
         chat.innerHTML += `<div class="${style}">
         <h6>${snapshot.pseudo}</h6>
