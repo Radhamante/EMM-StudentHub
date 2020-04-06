@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier</title>
+    <link href='lib/fullCalendar/packages/core/main.css' rel='stylesheet' />
+    <link href='lib/fullCalendar/packages/daygrid/main.css' rel='stylesheet' />
+    <link href='lib/fullCalendar/packages/timegrid/main.css' rel='stylesheet' />
+    <link rel="stylesheet" href="CSS/chat.css">
+    <link rel="stylesheet" href="CSS/header.css">
+
+</head>
+<body>
+    <header>
+        <a id="return" href=""><i class="far fa-arrow-alt-circle-left"></i></a>
+    </header>
+    <main>
+        <div id="chat"></div>
+        <div id="message">
+            <input type="text" id="addMessage">
+            <button onclick="addMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script src="JS/chat.js"></script>
+</body>
+</html>

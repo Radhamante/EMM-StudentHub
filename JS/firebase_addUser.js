@@ -17,8 +17,8 @@ const txtEmail = document.getElementById('username')
 const txtPassword = document.getElementById('pass1')
 const txtPassword2 = document.getElementById('pass2')
 const btn_SignUp = document.getElementById('sign_up')
-const name = document.getElementById('name')
-const lastname = document.getElementById('lastname')
+const namee = document.getElementById('name')
+const lastnamee = document.getElementById('lastname')
 let exo = ""
 firebase.firestore().collection('name_class').get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
@@ -29,49 +29,48 @@ firebase.firestore().collection('name_class').get().then(function (querySnapshot
     $('#class_choice').append(exo)
 })
 
-btn_SignUp.addEventListener('click', e =>{
-if(txtPassword.value == txtPassword2.value) {
-    var value_btn_radio = $("input[name='role']:checked").val();
-    let choix_class = document.getElementById('class_choice');
-        if (name.value!="" || lastname.value!="") {
-            if(value_btn_radio == 3){
-                console.log(choix_class.value)
-                if (choix_class.value != "") {
-                    firebase.auth().createUserWithEmailAndPassword(txtEmail.value,txtPassword.value).then(cred =>{
-                        alert("Le compte "+txtEmail.value+" à bien été créé")
-                        firebase.firestore().collection('Personnes_connectés').doc(cred.user.uid).set({
-                            autorisation: parseInt(value_btn_radio),
-                            Email: txtEmail.value,
-                            Classe: choix_class.value,
-                            Prenom: name.value,
-                            Nom: lastname.value,
-                            absence: 0,
-                            late: 0,
-                        })
-                    });
-                }
-                else{
-                    alert("veuillez choisir une classe")
-                }
-            }
-            else{
-                firebase.auth().createUserWithEmailAndPassword(txtEmail.value,txtPassword.value).then(cred =>{
-                    alert("Le compte "+txtEmail.value+" à bien été créé")
-                });
-                firebase.firestore().collection('Personnes_connectés').doc(cred.user.uid).set({
-                    autorisation: parseInt(value_btn_radio),
-                    Email: txtEmail.value,
-                    Prenom: name.value,
-                    Nom: lastname.value
-                })
-            }
-        }else{
-            alert("veuillez remplir le nom et le prénon")
-        }
-    }
-    else {
-        console.log($("input[name='role']:checked").val())
-        alert("les mdp ne sont pas pareils")
+btn_SignUp.addEventListener('click', e =>{     
+  //verification du mdp
+  if(txtPassword.value == txtPassword2.value) {
+    const email = txtEmail.value; 
+    const pass = txtPassword.value;
+    const name = namee.value;
+    const lastname = lastnamee.value;
+    //envoi de la donnée radio au cloud firestore
+    firebase.auth().createUserWithEmailAndPassword(email,pass).then(cred =>{
+      alert("Le compte "+txtEmail.value+" à bien été créé")
+      var user = firebase.auth().currentUser;
+      var value_btn_radio = $("input[name='role']:checked").val();
+      //retourne la valeur du radio
+      //class
+      let choix_class = document.getElementById('class_choice');
+
+      //retourne la valeur du radio
+      if(value_btn_radio ==3){
+        return firebase.firestore().collection('Personnes_connectés').doc(cred.user.uid).set({
+          autorisation: parseInt(value_btn_radio),
+          Email: txtEmail.value,
+          Classe: choix_class.value,
+          Prenom: namee.value,
+          Nom: lastnamee.value
+        })
+      } else{
+        return firebase.firestore().collection('Personnes_connectés').doc(cred.user.uid).set({
+          autorisation: parseInt(value_btn_radio),
+          Email: txtEmail.value,
+          Prenom: namee.value,
+          Nom: lastnamee.value
+        })
+      }
+    });
+    //Formulaire vierge
+    // document.getElementById('formulaire').reset();
+  }
+  else {
+    console.log($("input[name='role']:checked").val())
+    alert("les mdp ne sont pas pareils")
+    // document.getElementById('formulaire').reset();
+    
   }
 })
 

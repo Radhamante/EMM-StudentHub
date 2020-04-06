@@ -29,7 +29,10 @@ window.onload = () => {
             querySnapshot.forEach(doc => {
                 liste += `<option value="${doc.data().name}">${doc.data().name}</option>`
             })
-            header.innerHTML += `<select name="calendar" onchange="creatCalendar()" id="calendarPicker">${liste}</select>`
+            header.innerHTML += `<select name="calendar" onchange="creatCalendar()" id="calendarPicker">
+            <option value="" disabled selected>Choisir une classe</option>
+            ${liste}
+            </select>`
             document.querySelector("header").innerHTML += `<a href="addEvent.html"><i class="far fa-calendar-plus"></i></a>`
             document.getElementById("return").href = "adminHub.html"
         }
@@ -38,7 +41,10 @@ window.onload = () => {
             querySnapshot.forEach(doc => {
                 liste += `<option value="${doc.data().name}">${doc.data().name}</option>`
             })
-            header.innerHTML += `<select name="calendar" onchange="creatCalendar()" id="calendarPicker">${liste}</select>`
+            header.innerHTML += `<select name="calendar" onchange="creatCalendar()" id="calendarPicker">
+            <option value="" disabled selected>Choisir une classe</option>
+            ${liste}
+            </select>`
             document.getElementById("return").href = "profHub.html"
         }
         else if (auth == 3) {
