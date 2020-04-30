@@ -60,13 +60,11 @@ creatChat = (classe) => {
     let classePicker = undefined
     if (classe == undefined) {
         classePicker = document.getElementById("classePicker").value
-        console.log(classePicker)
     }else{
         classePicker = classe
     }
     fd.ref(classePicker).on('child_added', function(snapshot) {
         snapshot = snapshot.toJSON()
-        console.log(snapshot.pseudo,pseudo)
         if(snapshot.pseudo == pseudo){
             style = "me"
         }else{

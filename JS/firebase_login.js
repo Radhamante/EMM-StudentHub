@@ -27,7 +27,6 @@ btn_Login.addEventListener('click', e =>{
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if(firebaseUser){
     var user = firebase.auth().currentUser;
-    console.log(user.uid)
     firebase.firestore().collection('Personnes_connectés').doc(user.uid).get().then(doc =>{
       if(doc.data().autorisation == 3){
         document.location.pathname='studentHub.html'

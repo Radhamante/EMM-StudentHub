@@ -37,7 +37,6 @@ btn_SignUp.addEventListener('click', e =>{
     // document.getElementById('formulaire').reset();
   }
   else {
-    console.log($("input[name='role']:checked").val())
     alert("les mdp ne sont pas pareils")
     // document.getElementById('formulaire').reset();
     

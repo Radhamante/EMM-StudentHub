@@ -19,12 +19,9 @@ firebase.initializeApp(firebaseConfig);
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){
-      console.log(firebaseUser)
-      console.log("PLUS CO")
       deconnexion.classList.remove('hide')
 
     }else{
-      console.log('not logged in')
       deconnexion.classList.add('hide')
     }
 })

@@ -34,7 +34,6 @@ inputs.forEach(input => {
 
 changeColor = () =>{
     const color = document.getElementById("color")
-    console.log()
     spanColor.style.backgroundColor = color.value
 }
 
@@ -54,7 +53,6 @@ fb.collection("name_class").onSnapshot(querySnapshot => {
 
 valider = () =>{
     let error = false
-    console.log(classe.value)
     const titre = document.getElementById("titre")
     const prof = document.getElementById("prof")
     const jour = document.getElementById("jour")
@@ -84,12 +82,6 @@ valider = () =>{
     }
 
     if (!error) {
-        console.log(titre)
-        console.log(prof)
-        console.log(jour)
-        console.log(debut)
-        console.log(fin)
-        console.log(color)
         fb.collection(classe.value).add({
             title: `${titre.value} \n professeur : \n ${prof.value}`,
             start: `${jour.value} ${debut.value}:00`,

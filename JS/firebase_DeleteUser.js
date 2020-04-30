@@ -15,11 +15,9 @@ firebase.initializeApp(firebaseConfig);
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){
-      console.log("PLUS CO")
       deconnexion.classList.remove('hide')
 
     }else{
-      console.log('not logged in')
       deconnexion.classList.add('hide')
     }
   })
@@ -33,7 +31,6 @@ const fb = firebase.firestore();
 
 class_button.addEventListener('click', e =>{
   let new_class =  name_new_class.value;
-    console.log(new_class)
     firebase.firestore().collection("name_class").doc(new_class).set({
       name: new_class
     })

@@ -12,6 +12,8 @@ firebase.initializeApp(firebaseConfig);
 
 const fb = firebase.firestore();
 
+
+
 fb.collection("Personnes_connectés").get().then(querySnapshot => {
     let list = ""
     querySnapshot.forEach(doc => {
@@ -20,4 +22,11 @@ fb.collection("Personnes_connectés").get().then(querySnapshot => {
         }
     });
     document.getElementById("display").innerHTML += list
+    fb.collection('Personnes_connectés').doc(firebase.auth().currentUser.uid).get().then(doc => {
+        if (doc.data().autorisation == 1) {
+            document.getElementById("return").href = "adminHub.html"
+        }else{
+            document.getElementById("return").href = "profHub.html"
+        }
+    })
 })

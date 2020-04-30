@@ -129,7 +129,6 @@ firebase.firestore().collection('name_class').get().then(function (querySnapshot
     $('#filter_class').append(exo)
     let tbl = document.getElementsByClassName('hhey');
     for(let j=0; j<tbl.length; j++){
-        console.log(tbl[j].value)
         $('#filter_class').on('click','button', e =>{
         $("#lastname_usersID").html("")
         $("#class_usersID").html("")
@@ -137,7 +136,6 @@ firebase.firestore().collection('name_class').get().then(function (querySnapshot
         $("#tel_usersID").html("")
         $("#name_usersID").html("")
         if (e.target && e.target.id == tbl[j].value){
-            console.log("oui")
             let e_classe = "";
             let e_mail ="";
             let e_name = "";
@@ -149,7 +147,6 @@ firebase.firestore().collection('name_class').get().then(function (querySnapshot
                         e_mail +=  `<p>${doc.data().Email}</p>`
                         e_name +=  `<p>${doc.data().Prenom}</p>`
                         e_lastname += `<p>${doc.data().Nom}</p>`
-                        console.log(doc.data())
                     }
                 })
                 $('#class_usersID').append(e_classe)

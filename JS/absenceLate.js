@@ -142,11 +142,9 @@ fb.collection(classe).doc(queryString).onSnapshot(doc=>{
 })
 
 fb.collection("Personnes_connectés").get().then(querySnapshot => {
-    console.log(querySnapshot)
     let liste = ""
     querySnapshot.forEach(doc => {
         if (doc.data().Classe == classe){
-            console.log(doc.data().Classe,classe)
             liste += `<option value="${doc.id}/${doc.data().Nom} ${doc.data().Prenom}"> ${doc.data().Nom} ${doc.data().Prenom} </option>`
         }
     })

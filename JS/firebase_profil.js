@@ -66,7 +66,6 @@ const fb = firebase.firestore();
 window.onload = () => {
     setTimeout(() => {
         fb.collection('Personnes_connectés').doc(firebase.auth().currentUser.uid).onSnapshot(doc => {
-            console.log(doc.data().pp)
             if (doc.data().pp != undefined && doc.data().pp != "") {
                 pp.src = doc.data().pp
             }
@@ -75,9 +74,8 @@ window.onload = () => {
             email.innerHTML = doc.data().Email
             tel.innerHTML = doc.data().Telephone
             if(doc.data().autorisation == 3){
-                console.log(lateAbs)
                 lateAbs.innerHTML = `<h3>Nombre de retards</h3>
-                <p>${doc.data().late}</p>
+                <p>${doc.data().retard}</p>
                 <h3>Nombre d'absences</h3>
                 <p>${doc.data().absence}</p>`
             }

@@ -22,7 +22,6 @@ const lastnamee = document.getElementById('lastname')
 let exo = ""
 firebase.firestore().collection('name_class').get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
-      console.log(doc.data().name)
       exo+= `
       <option value="${doc.data().name}">${doc.data().name}</option>`
     })
@@ -34,8 +33,6 @@ btn_SignUp.addEventListener('click', e =>{
   if(txtPassword.value == txtPassword2.value) {
     const email = txtEmail.value; 
     const pass = txtPassword.value;
-    const name = namee.value;
-    const lastname = lastnamee.value;
     //envoi de la donnée radio au cloud firestore
     firebase.auth().createUserWithEmailAndPassword(email,pass).then(cred =>{
       alert("Le compte "+txtEmail.value+" à bien été créé")
@@ -69,7 +66,6 @@ btn_SignUp.addEventListener('click', e =>{
     // document.getElementById('formulaire').reset();
   }
   else {
-    console.log($("input[name='role']:checked").val())
     alert("les mdp ne sont pas pareils")
     // document.getElementById('formulaire').reset();
     
