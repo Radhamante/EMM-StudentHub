@@ -166,7 +166,12 @@ We use the full "fc-time-grid-event" class instead of using descendants because 
 be a descendant of the grid when it is being dragged.
 */
 .fc-time-grid-event {
-  margin-bottom: 1px;
+    margin-bottom: 1px;
+    cursor: pointer;
+    transition: 0.2s
+}
+.fc-time-grid-event:hover {
+    filter: brightness(0.8)
 }
 
 .fc-time-grid-event-inset {
@@ -196,6 +201,7 @@ be a descendant of the grid when it is being dragged.
 .fc-time-grid-event .fc-content {
   overflow: hidden;
   max-height: 100%;
+  
 }
 
 .fc-time-grid-event .fc-time,

@@ -52,7 +52,9 @@ btn_SignUp.addEventListener('click', e =>{
           Email: txtEmail.value,
           Classe: choix_class.value,
           Prenom: namee.value,
-          Nom: lastnamee.value
+          Nom: lastnamee.value,
+          retard: 0,
+          absence: 0
         })
       } else{
         return firebase.firestore().collection('Personnes_connectés').doc(cred.user.uid).set({

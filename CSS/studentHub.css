@@ -20,9 +20,9 @@ main{
     padding: 0px 40px
 }
 .button{
-    width: 40%;
+    width: 50%;
     min-width: 400px;
-    height: 50%;
+    height: 70%;
     box-sizing: border-box;
     padding: 20px;
     display: flex;

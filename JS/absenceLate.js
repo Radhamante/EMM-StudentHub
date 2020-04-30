@@ -27,7 +27,10 @@ const hours = document.getElementsByTagName("p")[0]
 const lateAdmin = document.getElementById("lateAdmin")
 const lateProf = document.getElementById("lateProf")
 const lateStudent = document.getElementById("lateStudent")
+const absenceList = document.getElementById("absenceList")
+
 const absence = document.getElementById("absence")
+const late = document.getElementById("late")
 
 const popupLate = document.getElementById("popupLate")
 const popupAbsence = document.getElementById("popupAbsence")
@@ -50,6 +53,7 @@ setLate = () =>{
         }
     })
 } 
+
 setAbsence = () =>{
     fb.collection('Personnes_connectés').doc(firebase.auth().currentUser.uid).get().then((e) => {
         auth = e.data().autorisation
@@ -68,80 +72,38 @@ setAbsence = () =>{
 } 
 
 ProfAndAdminLate = () =>{
-    let niv = ""
-    const latePrenom = document.getElementById("latePrenom")
-    const lateNom = document.getElementById("lateNom")
-    let error = true
-    let id = ""
-    if(latePrenom.value != "" && lateNom.value != ""){
-        fb.collection('Personnes_connectés').get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                if (doc.data().Nom == lateNom.value && doc.data().Prenom == latePrenom.value) {
-                    error = false
-                    id = doc.id
-                }
-            })
-            if (!error) {
-                if(confirm("confirmer votre retard ?")){
-                    fb.collection('Personnes_connectés').doc(id).update({retard:increment})
-                    if(auth == 1){
-                        fb.collection(classe).doc(queryString).update({"late.admin":firebase.firestore.FieldValue.arrayUnion(lateNom.value + " " + latePrenom.value)})
-                    }else{
-                        fb.collection(classe).doc(queryString).update({"late.prof":firebase.firestore.FieldValue.arrayUnion(lateNom.value + " " + latePrenom.value)})
-                    }
-                    alert("retard confirmeé")
-                    popupLate.style.display = "none"
-                    latePrenom.value = ""
-                    lateNom.value = ""
-                }
-            }else{
-                alert("Eleve inconnu")
-            }
-            
-        })
-    }else{
-        latePrenom.placeholder = "Champ vide"
-        lateNom.placeholder = "Champ vide"
+    let id = late.value.split("/")[0]
+    if(confirm("confirmer l'retard ?")){
+        fb.collection('Personnes_connectés').doc(id).update({retard:increment})
+        if(auth == 1){
+            fb.collection(classe).doc(queryString).update({"late.admin":firebase.firestore.FieldValue.arrayUnion(late.value.split("/")[1])})
+        }else{
+            fb.collection(classe).doc(queryString).update({"late.prof":firebase.firestore.FieldValue.arrayUnion(late.value.split("/")[1])})
+        }
+        alert("retard confirmeé")
+        popupLate.style.display = "none"
     }
 }
+
 ProfAndAdminAbsence = () =>{
 
-    const absencePrenom = document.getElementById("absencePrenom")
-    const absenceNom = document.getElementById("absenceNom")
-    let error = true
-    let id =""
-    if(absencePrenom.value != "" && absenceNom.value != ""){
-        fb.collection('Personnes_connectés').onSnapshot(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                if (doc.data().Nom == absenceNom.value && doc.data().Prenom == absencePrenom.value) {
-                    error = false
-                    id = doc.id
-                }
-            })
-            if (!error) {
-                if(confirm("confirmer votre absence ?")){
-                    fb.collection('Personnes_connectés').doc(id).update({absence:increment})
-                    if(auth == 1){
-                        fb.collection(classe).doc(queryString).update({"late.admin":firebase.firestore.FieldValue.arrayRemove(absenceNom.value + " " + absencePrenom.value)})
-                    }else{
-                        fb.collection(classe).doc(queryString).update({"late.student":firebase.firestore.FieldValue.arrayRemove(absenceNom.value + " " + absencePrenom.value)})
-                        fb.collection(classe).doc(queryString).update({"late.prof":firebase.firestore.FieldValue.arrayRemove(absenceNom.value + " " + absencePrenom.value)})
-                        fb.collection(classe).doc(queryString).update({"late.admin":firebase.firestore.FieldValue.arrayRemove(absenceNom.value + " " + absencePrenom.value)})
-                    }
-                    fb.collection(classe).doc(queryString).update({"absence":firebase.firestore.FieldValue.arrayUnion(absenceNom.value + " " + absencePrenom.value)})
-                    alert("retard confirmeé")
-                    popupAbsence.style.display = "none"
-                    absencePrenom.value = ""
-                    absenceNom.value = ""
-                }
-            }else{
-                alert("Eleve inconnu")
-            }
-            error = true
+    const absence = document.getElementById("absence")
+    let id = late.value.split("/")[0]
+    if(confirm("confirmer l'absence ?")){
+        fb.collection('personnes_connectés').get().then(querySnapshot => {
+            querySnapshot.forEach
         })
-    }else{
-        absencePrenom.placeholder = "Champ vide"
-        absenceNom.placeholder = "Champ vide"
+        fb.collection('Personnes_connectés').doc(id).update({absence:increment})
+        if(auth == 1){
+            fb.collection(classe).doc(queryString).update({"late.admin":firebase.firestore.FieldValue.arrayRemove(absence.value.split("/")[1])})
+        }else{
+            fb.collection(classe).doc(queryString).update({"late.student":firebase.firestore.FieldValue.arrayRemove(absence.value.split("/")[1])})
+            fb.collection(classe).doc(queryString).update({"late.prof":firebase.firestore.FieldValue.arrayRemove(absence.value.split("/")[1])})
+            fb.collection(classe).doc(queryString).update({"late.admin":firebase.firestore.FieldValue.arrayRemove(absence.value.split("/")[1])})
+        }
+        fb.collection(classe).doc(queryString).update({"absence":firebase.firestore.FieldValue.arrayUnion(absence.value.split("/")[1])})
+        alert("retard confirmeé")
+        popupAbsence.style.display = "none"
     }
 }
 
@@ -151,22 +113,22 @@ fb.collection(classe).doc(queryString).onSnapshot(doc=>{
     prof.innerHTML = doc.data().title.split(":")[1]
     hours.innerHTML = doc.data().start.split(" ")[1].split(":")[0] + ":" + doc.data().start.split(" ")[1].split(":")[1] + " - " + doc.data().end.split(" ")[1].split(":")[0] + ":" +doc.data().end.split(" ")[1].split(":")[1]
 
-    let late = doc.data().late
+    let getLate = doc.data().late
 
     let liste = ""
-    late.prof.forEach(elem => {
+    getLate.prof.forEach(elem => {
         liste += `<li>${elem}</li>`
     })
     lateProf.innerHTML = liste
 
     liste = ""
-    late.admin.forEach(elem => {
+    getLate.admin.forEach(elem => {
         liste += `<li>${elem}</li>`
     })
     lateAdmin.innerHTML = liste
 
     liste = ""
-    late.student.forEach(elem => {
+    getLate.student.forEach(elem => {
         liste += `<li>${elem}</li>`
     })
     lateStudent.innerHTML = liste
@@ -175,7 +137,19 @@ fb.collection(classe).doc(queryString).onSnapshot(doc=>{
     doc.data().absence.forEach(elem => {
         liste += `<li>${elem}</li>`
     })
-    absence.innerHTML = liste
+    absenceList.innerHTML = liste
 
-    
+})
+
+fb.collection("Personnes_connectés").get().then(querySnapshot => {
+    console.log(querySnapshot)
+    let liste = ""
+    querySnapshot.forEach(doc => {
+        if (doc.data().Classe == classe){
+            console.log(doc.data().Classe,classe)
+            liste += `<option value="${doc.id}/${doc.data().Nom} ${doc.data().Prenom}"> ${doc.data().Nom} ${doc.data().Prenom} </option>`
+        }
+    })
+    late.innerHTML += liste
+    absence.innerHTML += liste
 })

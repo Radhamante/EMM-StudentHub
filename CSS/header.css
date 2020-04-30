@@ -23,7 +23,11 @@ header a{
     align-items: center;
     text-decoration: none;
     margin: 0 40px;
-    color: white
+    color: white;
+    font-weight: 600;
+}
+header > a{
+    font-size: 30px
 }
 header i{
     display: flex;

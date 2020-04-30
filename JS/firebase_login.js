@@ -21,7 +21,7 @@ btn_Login.addEventListener('click', e =>{
   const email = txtEmail.value;       
   const pass = txtPassword.value;   
   const promise = firebase.auth().signInWithEmailAndPassword(email,pass);
-  promise.catch(e => console.log(e.message))
+  promise.catch(e => alert("Erreur de connection : \n" + e.message.split(".")[0]))
 })
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{

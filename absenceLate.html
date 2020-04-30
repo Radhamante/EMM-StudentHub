@@ -19,28 +19,18 @@
         <div id="popupLate" class="popup">
             <button class="close" onclick="popupLate.style.display = 'none'"><i class="far fa-times-circle"></i></button>
             <h3>Signaler un retard</h3>
-            <label>
-                Prenom
-                <input type="text" id="latePrenom">
-            </label>
-            <label>
-                Nom
-                <input type="text" id="lateNom">
-            </label>
+            <select id="late">
+                <option value="" selected disabled> selectioner l'eleve </option>
+            </select>
             <button class="valide" onclick="ProfAndAdminLate()">Valider</button>
         </div>
 
         <div id="popupAbsence" class="popup">
             <button class="close" onclick="popupAbsence.style.display = 'none'"><i class="far fa-times-circle"></i></button>
             <h3>Signaler une absence</h3>
-            <label>
-                Prenom
-                <input type="text" id="absencePrenom">
-            </label>
-            <label>
-                Nom
-                <input type="text" id="absenceNom">
-            </label>
+            <select id="absence">
+                <option value="" selected disabled> selectioner l'eleve </option>
+            </select>
             <button class="valide" onclick="ProfAndAdminAbsence()">Valider</button>
         </div>
 
@@ -71,7 +61,7 @@
             </div>
             <div class="late">
                 <h3>Absence</h3>
-                <ul id="absence">
+                <ul id="absenceList">
 
                 </ul>
             </div>
