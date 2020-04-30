@@ -13,66 +13,56 @@ var firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-firebase.auth().onAuthStateChanged(firebaseUser =>{
-    if(firebaseUser){
-      console.log(firebaseUser)
-      console.log("PLUS CO")
-      deconnexion.classList.remove('hide')
 
-    }else{
-      console.log('not logged in')
-      deconnexion.classList.add('hide')
+
+//Prénom
+let e_prenom = ""
+firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+        // let console = doc.data();
+        if(doc.data().autorisation == 3){
+            e_prenom +=  `<p>${doc.data().Prenom}</p>`
+        }
+    })
+    $('#name_usersID').append(e_prenom)
+})
+
+//Nom
+let e_nom = ""
+firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+    if(doc.data().autorisation == 3){
+    
+        e_nom +=  `<p>${doc.data().Nom}</p>`
     }
-  })
+        console.log(doc.data())
+    })
+    $('#lastname_usersID').append(e_nom)
+})
 
-      //Prénom
-      let e_prenom = ""
-      firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
-          querySnapshot.forEach(function (doc) {
-              // let console = doc.data();
-              if(doc.data().autorisation == 3){
-                    e_prenom +=  `<p>${doc.data().Prenom}</p>`
-              }
-          })
-          $('#name_usersID').append(e_prenom)
-      })
+//Classe
+let e_classee = ""
+firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+    if(doc.data().autorisation == 3){
+        e_classee +=  `<p>${doc.data().Classe}</p>`
+    }
+        console.log(doc.data())
+    })
+    $('#class_usersID').append(e_classee)
+})
 
-      //Nom
-      let e_nom = ""
-      firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
-          querySnapshot.forEach(function (doc) {
-            if(doc.data().autorisation == 3){
-            
-              e_nom +=  `<p>${doc.data().Nom}</p>`
-            }
-              console.log(doc.data())
-          })
-          $('#lastname_usersID').append(e_nom)
-      })
-
-      //Classe
-      let e_classee = ""
-      firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
-          querySnapshot.forEach(function (doc) {
-            if(doc.data().autorisation == 3){
-                e_classee +=  `<p>${doc.data().Classe}</p>`
-            }
-              console.log(doc.data())
-          })
-          $('#class_usersID').append(e_classee)
-      })
-
-      //Email
-      let e_email = ""
-      firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
-          querySnapshot.forEach(function (doc) {
-            if(doc.data().autorisation == 3){
-                e_email +=  `<p>${doc.data().Email}</p>`
-            }
-              console.log(doc.data())
-          })
-          $('#email_usersID').append(e_email)
-      })
+//Email
+let e_email = ""
+firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+    if(doc.data().autorisation == 3){
+        e_email +=  `<p>${doc.data().Email}</p>`
+    }
+        console.log(doc.data())
+    })
+    $('#email_usersID').append(e_email)
+})
       
 let all_user = document.getElementById('list_complet_user')
     //profil change

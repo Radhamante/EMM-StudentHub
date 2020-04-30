@@ -218,7 +218,7 @@ a{
     transition: .3s;
 }
 
-a:hover{
+#delete:hover{
     color: #38d39f;
 }
 

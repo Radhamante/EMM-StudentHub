@@ -11,7 +11,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-var messagesRef = firebase.database().ref('messages');
+let messagesRef = firebase.database().ref('messages');
 
 const txtEmail = document.getElementById('username')
 const txtPassword = document.getElementById('pass1')
@@ -25,8 +25,7 @@ btn_SignUp.addEventListener('click', e =>{
     //envoi de la donnée radio au cloud firestore
     firebase.auth().createUserWithEmailAndPassword(email,pass).then(cred =>{
       alert("Le compte "+txtEmail.value+" à bien été créé")
-      var user = firebase.auth().currentUser;
-      var value_btn_radio = $("input[name='role']:checked").val();
+      let value_btn_radio = $("input[name='role']:checked").val();
       //retourne la valeur du radio
       return firebase.firestore().collection('Personnes_connectés').doc(cred.user.uid).set({
         autorisation: parseInt(value_btn_radio),

@@ -79,6 +79,15 @@ window.onload = () => {
                 <h3>Nombre d'absences</h3>
                 <p>${doc.data().absence}</p>`
             }
+            if (doc.data().autorisation == 3) {
+                document.getElementById("return").href = "studentHub.html"
+            }
+            else if (doc.data().autorisation == 2) {
+                document.getElementById("return").href = "profHub.html"
+            }
+            else{
+                document.getElementById("return").href = "adminHub.html"
+            }
         })
     },900)
 }

@@ -13,15 +13,6 @@ var firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-firebase.auth().onAuthStateChanged(firebaseUser =>{
-    if(firebaseUser){
-      deconnexion.classList.remove('hide')
-
-    }else{
-      deconnexion.classList.add('hide')
-    }
-  })
-
 //Add class
 const class_button = document.getElementById('add_class_button')
 const supp_button = document.getElementById('supp_class_button')
@@ -39,16 +30,13 @@ class_button.addEventListener('click', e =>{
 //Delete class
 let exo = ""
 firebase.firestore().collection('Personnes_connectés').get().then(function (querySnapshot) {
-    var tbl=[];
+    let tbl=[];
     querySnapshot.forEach(function (doc) {
         tbl.push(doc.id)
       exo+= `
       <option value="${doc.id}" class="${doc.data().Email}">${doc.data().Email}</option>`
     })
     $('#hello').append(exo)
-    let choix_class = document.getElementById('hello');
-    
-
 })
 let choix_class = document.getElementById('hello');
 supp_button.addEventListener('click', e =>{
@@ -58,7 +46,8 @@ supp_button.addEventListener('click', e =>{
     })
     firebase.firestore().collection("Personnes_connectés").doc(idUser).delete().then(function() {
       alert("Vous avez bien supprimez l'utilisateur ");
-  }).catch(function(error) {
+    })
+    .catch(function(error) {
       console.error("Error removing document: ", error);
   });
   

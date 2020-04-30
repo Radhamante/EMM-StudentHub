@@ -18,15 +18,15 @@ const txtPassword = document.getElementById('pass')
 const btn_Login = document.getElementById('sign_up')
 
 btn_Login.addEventListener('click', e =>{
-  const email = txtEmail.value;       
-  const pass = txtPassword.value;   
-  const promise = firebase.auth().signInWithEmailAndPassword(email,pass);
-  promise.catch(e => alert("Erreur de connection : \n" + e.message.split(".")[0]))
+    const email = txtEmail.value;       
+    const pass = txtPassword.value;   
+    const promise = firebase.auth().signInWithEmailAndPassword(email,pass);
+    promise.catch(e => alert("Erreur de connection : \n" + e.message.split(".")[0]))
 })
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if(firebaseUser){
-    var user = firebase.auth().currentUser;
+    let user = firebase.auth().currentUser;
     firebase.firestore().collection('Personnes_connectés').doc(user.uid).get().then(doc =>{
       if(doc.data().autorisation == 3){
         document.location.pathname='studentHub.html'

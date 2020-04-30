@@ -13,15 +13,6 @@ var firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-firebase.auth().onAuthStateChanged(firebaseUser =>{
-    if(firebaseUser){
-      deconnexion.classList.remove('hide')
-
-    }else{
-      deconnexion.classList.add('hide')
-    }
-  })
-
 //Add class
 const class_button = document.getElementById('add_class_button')
 const supp_button = document.getElementById('supp_class_button')
