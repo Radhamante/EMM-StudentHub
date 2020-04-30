@@ -27,5 +27,4 @@ mdp : profprof
 20 comptes sont deja créés :
 
 username : etudiant[numeroDe1à20]@etudiant.fr
-
 mdp : etudiant[mêmeNumero]
