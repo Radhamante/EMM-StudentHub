@@ -14,17 +14,17 @@ https://projestage-eb43e.firebaseapp.com/
 
 ### Compte Admin :
 
-username : admin@admin.fr
+username : admin@admin.fr 
 mdp : adminadmin
 
 ### Compte prof :
 
-username : prof@prof.fr
+username : prof@prof.fr 
 mdp : profprof
 
 ### Compte etudiant : 
 
-20 comptes sont deja créés :
+20 comptes sont deja créés : 
 
-username : etudiant[numeroDe1à20]@etudiant.fr
+username : etudiant[numeroDe1à20]@etudiant.fr 
 mdp : etudiant[mêmeNumero]
